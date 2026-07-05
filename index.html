@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ยาความเสี่ยงสูง — การ์ดอ้างอิงสำหรับพยาบาล</title>
+<style>
+  :root{
+    --page:#eef0f2; --card:#ffffff;
+    --ink:#1f2430; --ink2:#5b6270; --muted:#8b90a0; --line:#e7e9ee;
+    --dg-bg:#fdecec; --dg-ink:#a12525;
+    --ac-bg:#e9f2fb; --ac-ink:#1f6fb2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai","Sarabun",Roboto,Arial,sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:560px;margin:0 auto;padding:20px 16px 32px;}
+  .top{display:flex;align-items:center;gap:11px;margin-bottom:4px;}
+  .top .ic{width:40px;height:40px;border-radius:11px;background:var(--dg-bg);
+    display:flex;align-items:center;justify-content:center;flex:none;}
+  .top .ic svg{width:22px;height:22px;stroke:var(--dg-ink);stroke-width:1.8;}
+  h1{font-size:20px;font-weight:600;margin:0;line-height:1.2;}
+  .lede{font-size:13px;color:var(--ink2);margin:2px 0 0;}
+  .grid{margin-top:20px;display:grid;gap:11px;}
+  a.item{display:flex;align-items:center;gap:13px;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:13px;
+    padding:14px 15px;color:var(--ink);transition:border-color .15s,transform .05s;}
+  a.item:hover{border-color:#c9ccd6;}
+  a.item:active{transform:scale(.995);}
+  a.item .dot{width:38px;height:38px;border-radius:10px;background:var(--ac-bg);
+    display:flex;align-items:center;justify-content:center;flex:none;}
+  a.item .dot svg{width:21px;height:21px;stroke:var(--ac-ink);stroke-width:1.7;}
+  a.item .tx{flex:1;min-width:0;}
+  a.item .nm{font-size:15.5px;font-weight:600;margin:0;}
+  a.item .ds{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
+  a.item .go{color:var(--muted);flex:none;}
+  a.item .go svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;}
+  .soon{opacity:.55;pointer-events:none;}
+  .soon .tag{font-size:10.5px;color:var(--muted);border:1px solid var(--line);
+    border-radius:20px;padding:2px 8px;margin-left:8px;white-space:nowrap;}
+  .foot{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);}
+  .foot p{margin:0;font-size:11.5px;color:var(--ink2);line-height:1.55;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+    </div>
+    <div>
+      <h1>ยาความเสี่ยงสูง</h1>
+      <p class="lede">การ์ดอ้างอิงสำหรับพยาบาลหน้างาน · สแกน QR เพื่อเปิด</p>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <a class="item" href="adrenaline.html">
+      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4M14 6l4 4M8.5 8.5l7 7M5 21l4-4M3 15l3-3 6 6-3 3z"/></svg></span>
+      <span class="tx">
+        <p class="nm">Adrenaline (epinephrine)</p>
+        <p class="ds">anaphylaxis · cardiac arrest · IV infusion</p>
+      </span>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <div class="item soon">
+      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
+      <span class="tx">
+        <p class="nm">Potassium chloride (KCl)<span class="tag">กำลังจัดทำ</span></p>
+        <p class="ds">concentrated electrolyte</p>
+      </span>
+    </div>
+
+    <div class="item soon">
+      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
+      <span class="tx">
+        <p class="nm">Insulin (regular, IV)<span class="tag">กำลังจัดทำ</span></p>
+        <p class="ds">high-alert · IV infusion</p>
+      </span>
+    </div>
+
+    <div class="item soon">
+      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
+      <span class="tx">
+        <p class="nm">Heparin<span class="tag">กำลังจัดทำ</span></p>
+        <p class="ds">anticoagulant · IV</p>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p>เนื้อหาต้องผ่านการตรวจสอบโดยเภสัชกร และยืนยันกับแนวทาง/formulary ของโรงพยาบาลก่อนใช้จริง</p>
+  </div>
+
+</div>
+</body>
+</html>
