@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrenaline (epinephrine) — การ์ดยาความเสี่ยงสูง</title>
+<style>
+  :root{
+    --page:#eef0f2; --card:#ffffff;
+    --ink:#1f2430; --ink2:#5b6270; --muted:#8b90a0; --line:#e7e9ee;
+    --dg-bg:#fdecec; --dg-ink:#a12525; --dg-line:#e3a3a3;
+    --sc-bg:#e8f5ee; --sc-ink:#1a6b4a; --sc-line:#9ccbb4;
+    --wn-bg:#fbf0da; --wn-ink:#8a5a10; --wn-line:#e0bd76;
+    --ac-bg:#e9f2fb; --ac-ink:#1f6fb2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai","Sarabun",Roboto,Arial,sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:460px;margin:0 auto;padding:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px 18px 16px;overflow:hidden;}
+  .icn{width:16px;height:16px;stroke-width:1.7;flex:none;vertical-align:-3px;}
+  .head{display:flex;align-items:center;gap:11px;}
+  .head .badge-i{width:40px;height:40px;border-radius:11px;background:var(--ac-bg);
+    display:flex;align-items:center;justify-content:center;flex:none;}
+  .head .badge-i svg{width:22px;height:22px;stroke:var(--ac-ink);stroke-width:1.7;}
+  .name{font-size:19px;font-weight:600;line-height:1.2;margin:0;}
+  .sub{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
+  .ha{margin-left:auto;flex:none;background:var(--dg-bg);color:var(--dg-ink);
+    font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:4px;}
+  .ha svg{width:12px;height:12px;stroke:var(--dg-ink);stroke-width:2;}
+  .alert{margin-top:15px;background:var(--dg-bg);border-radius:11px;padding:12px 13px;}
+  .alert .t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dg-ink);margin:0;}
+  .alert .t svg{width:15px;height:15px;stroke:var(--dg-ink);stroke-width:1.9;}
+  .alert p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--dg-ink);}
+  .sect{margin-top:16px;}
+  .lbl{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;
+    letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:0 0 8px;}
+  .lbl svg{width:14px;height:14px;stroke:var(--muted);stroke-width:1.8;}
+  .conc{display:flex;gap:9px;}
+  .conc .box{flex:1;border-radius:11px;padding:11px 12px;}
+  .conc .g{background:var(--sc-bg);}
+  .conc .r{background:var(--dg-bg);}
+  .conc .cn{font-size:14px;font-weight:700;margin:0;}
+  .conc .g .cn{color:var(--sc-ink);} .conc .r .cn{color:var(--dg-ink);}
+  .conc .mg{font-size:11.5px;margin:2px 0 0;}
+  .conc .g .mg{color:var(--sc-ink);} .conc .r .mg{color:var(--dg-ink);}
+  .conc .rt{font-size:11.5px;font-weight:600;margin:8px 0 0;}
+  .conc .g .rt{color:var(--sc-ink);} .conc .r .rt{color:var(--dg-ink);}
+  .ind{border-radius:11px;padding:11px 12px;margin-bottom:9px;}
+  .ind:last-child{margin-bottom:0;}
+  .ind.g{border:1px solid var(--sc-line);} .ind.r{border:1px solid var(--dg-line);} .ind.w{border:1px solid var(--wn-line);}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;}
+  .pill svg{width:12px;height:12px;stroke-width:2;}
+  .g .pill{background:var(--sc-bg);color:var(--sc-ink);} .g .pill svg{stroke:var(--sc-ink);}
+  .r .pill{background:var(--dg-bg);color:var(--dg-ink);} .r .pill svg{stroke:var(--dg-ink);}
+  .w .pill{background:var(--wn-bg);color:var(--wn-ink);} .w .pill svg{stroke:var(--wn-ink);}
+  ul{margin:8px 0 0;padding-left:18px;}
+  li{font-size:12.5px;line-height:1.6;color:var(--ink);margin:1px 0;}
+  b{font-weight:700;}
+  .dc{margin-top:13px;background:var(--wn-bg);border-radius:11px;padding:11px 13px;}
+  .dc .t{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+    letter-spacing:.04em;color:var(--wn-ink);text-transform:uppercase;margin:0;}
+  .dc .t svg{width:14px;height:14px;stroke:var(--wn-ink);stroke-width:1.9;}
+  .dc p{margin:5px 0 0;font-size:12.5px;line-height:1.5;color:var(--wn-ink);}
+  .foot{margin-top:15px;padding-top:11px;border-top:1px solid var(--line);}
+  .foot p{margin:0;font-size:11.5px;line-height:1.5;color:var(--ink2);display:flex;gap:6px;}
+  .foot p svg{width:14px;height:14px;stroke:var(--ink2);stroke-width:1.7;flex:none;margin-top:1px;}
+  .foot .ref{margin-top:6px;font-size:10.5px;color:var(--muted);display:block;}
+  @media print{ body{background:#fff;} .wrap{padding:0;} .card{border:none;border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <div class="head">
+    <div class="badge-i" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4M14 6l4 4M8.5 8.5l7 7M5 21l4-4M3 15l3-3 6 6-3 3z"/></svg>
+    </div>
+    <div>
+      <p class="name">Adrenaline (epinephrine)</p>
+      <p class="sub">injection · vasopressor / sympathomimetic</p>
+    </div>
+    <span class="ha"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>High alert</span>
+  </div>
+
+  <div class="alert">
+    <p class="t"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>จุดพลาดอันตรายถึงชีวิต</p>
+    <p>1:1,000 (IM · แพ้) เข้มข้นกว่า 1:10,000 (IV · หัวใจหยุด) <b>10 เท่า</b> — ห้ามสลับความเข้มข้น/route · <b>ห้ามให้ 1:1,000 ทาง IV</b> การให้ขนาด arrest แก่ผู้ป่วยแพ้ทำให้หัวใจเต้นผิดจังหวะ/กล้ามเนื้อหัวใจตายได้</p>
+  </div>
+
+  <div class="sect">
+    <p class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 19 18l-5-9V3M7.5 14h9"/></svg>ความแรง / รูปแบบ</p>
+    <div class="conc">
+      <div class="box g">
+        <p class="cn">1:1,000</p>
+        <p class="mg">1 mg/mL</p>
+        <p class="rt">IM · แพ้ (anaphylaxis)</p>
+      </div>
+      <div class="box r">
+        <p class="cn">1:10,000</p>
+        <p class="mg">0.1 mg/mL</p>
+        <p class="rt">IV · หัวใจหยุด (arrest)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h9M9 12h9M9 19h9M4 5h.01M4 12h.01M4 19h.01"/></svg>ข้อบ่งใช้ + ขนาด + วิธีบริหาร</p>
+
+    <div class="ind g">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg>Anaphylaxis · IM</span>
+      <ul>
+        <li>ความเข้มข้น <b>1:1,000</b> (1 mg/mL)</li>
+        <li>ผู้ใหญ่/≥30 kg: <b>0.3–0.5 mg</b> (0.3–0.5 mL) IM ต้นขาด้านหน้า-นอก</li>
+        <li>เด็ก &lt;30 kg: 0.01 mg/kg (สูงสุด 0.3 mg) IM</li>
+        <li>ซ้ำได้ทุก 5–15 นาทีตามอาการ · ห้ามให้ IV</li>
+      </ul>
+    </div>
+
+    <div class="ind r">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>Cardiac arrest · IV/IO</span>
+      <ul>
+        <li>ความเข้มข้น <b>1:10,000</b> (0.1 mg/mL)</li>
+        <li>ผู้ใหญ่: <b>1 mg</b> (10 mL) IV/IO ทุก 3–5 นาที</li>
+        <li>เด็ก: 0.01 mg/kg (0.1 mL/kg ของ 1:10,000) สูงสุด 1 mg</li>
+      </ul>
+    </div>
+
+    <div class="ind w">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>IV infusion · shock</span>
+      <ul>
+        <li>ผสม 1 mg ใน D5W 250 mL = <b>4 mcg/mL</b></li>
+        <li>เริ่ม 1–4 mcg/min ปรับขึ้นได้ถึง ~10 mcg/min (ผู้ใหญ่)</li>
+        <li>ผ่าน infusion pump · ควรให้ทาง central line</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg>เฝ้าระวังหลังบริหาร</p>
+    <ul>
+      <li>BP · HR · cardiac monitor — เฝ้าหัวใจเต้นผิดจังหวะ, ความดันพุ่งสูง, เจ็บหน้าอก</li>
+      <li>ตำแหน่งให้ยา: รั่วออกนอกเส้น (extravasation) → เนื้อตายได้ ยิ่งควรให้ทาง central line</li>
+      <li>อาการทั่วไป: มือสั่น ใจสั่น กระวนกระวาย ปวดหัว (มักชั่วคราว)</li>
+    </ul>
+  </div>
+
+  <div class="dc">
+    <p class="t"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L12 8M13 15l3 3 5-9"/></svg>Double-check ก่อนให้</p>
+    <p>ตรวจซ้ำ 2 คน ให้ตรงข้อบ่งใช้: <b>ความเข้มข้น + route + ขนาด</b> โดยเฉพาะเมื่อจะให้ทาง IV</p>
+  </div>
+
+  <div class="foot">
+    <p><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>ค่าอ้างอิงทั่วไป ต้องยืนยันกับแนวทาง/formulary ของโรงพยาบาล และผ่านการตรวจสอบโดยเภสัชกรก่อนใช้จริง</span></p>
+    <span class="ref">อ้างอิง: ACLS / resuscitation guideline · แนวทาง anaphylaxis · ISMP high-alert medications</span>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
