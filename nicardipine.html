@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicardipine — การ์ดยาความเสี่ยงสูง</title>
+<style>
+  :root{
+    --page:#eef0f2; --card:#ffffff;
+    --ink:#1f2430; --ink2:#5b6270; --muted:#8b90a0; --line:#e7e9ee;
+    --dg-bg:#fdecec; --dg-ink:#a12525; --dg-line:#e3a3a3;
+    --sc-bg:#e8f5ee; --sc-ink:#1a6b4a; --sc-line:#9ccbb4;
+    --wn-bg:#fbf0da; --wn-ink:#8a5a10; --wn-line:#e0bd76;
+    --ac-bg:#e9f2fb; --ac-ink:#1f6fb2; --ac-line:#b8d8f5;
+    --pr-bg:#f3edfb; --pr-ink:#6b35b8; --pr-line:#c4a8e8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai","Sarabun",Roboto,Arial,sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:460px;margin:0 auto;padding:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;}
+  .head{display:flex;align-items:center;gap:11px;}
+  .head .ic{width:40px;height:40px;border-radius:11px;background:var(--pr-bg);
+    display:flex;align-items:center;justify-content:center;flex:none;}
+  .head .ic svg{width:22px;height:22px;stroke:var(--pr-ink);stroke-width:1.7;fill:none;}
+  .name{font-size:19px;font-weight:600;line-height:1.2;margin:0;}
+  .sub{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
+  .ha{margin-left:auto;flex:none;background:var(--dg-bg);color:var(--dg-ink);
+    font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:4px;}
+  .ha svg{width:12px;height:12px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .alert{margin-top:14px;background:var(--dg-bg);border-radius:11px;padding:12px 13px;}
+  .alert-t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dg-ink);margin:0 0 6px;}
+  .alert-t svg{width:15px;height:15px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .alert ul{margin:0;padding-left:16px;}
+  .alert li{font-size:12.5px;line-height:1.6;color:var(--dg-ink);}
+  .incompat{margin-top:10px;background:var(--dg-bg);border:1px solid var(--dg-line);border-radius:11px;padding:10px 13px;}
+  .incompat-t{font-size:11px;font-weight:600;color:var(--dg-ink);margin:0 0 5px;display:flex;align-items:center;gap:5px;}
+  .incompat-t svg{width:13px;height:13px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .incompat ul{margin:0;padding-left:16px;}
+  .incompat li{font-size:12px;line-height:1.55;color:var(--dg-ink);}
+  .sect{margin-top:15px;}
+  .lbl{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;
+    letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:0 0 8px;}
+  .lbl svg{width:14px;height:14px;stroke:var(--muted);stroke-width:1.8;fill:none;}
+  .str-box{background:var(--pr-bg);border:1px solid var(--pr-line);border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:12px;}
+  .str-box svg{width:28px;height:28px;stroke:var(--pr-ink);stroke-width:1.6;fill:none;flex:none;}
+  .str-box .sv{font-size:15px;font-weight:700;color:var(--pr-ink);margin:0;}
+  .str-box .sd{font-size:12px;color:var(--pr-ink);margin:2px 0 0;opacity:.85;}
+  .mix{margin-top:9px;background:var(--ac-bg);border:1px solid var(--ac-line);border-radius:11px;padding:11px 13px;}
+  .mix-t{font-size:11px;font-weight:600;color:var(--ac-ink);margin:0 0 6px;display:flex;align-items:center;gap:5px;}
+  .mix-t svg{width:14px;height:14px;stroke:var(--ac-ink);stroke-width:1.8;fill:none;}
+  .mix ul{margin:0;padding-left:16px;}
+  .mix li{font-size:12.5px;line-height:1.6;color:var(--ac-ink);}
+  /* PERIPHERAL/CENTRAL BOX */
+  .line-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px;}
+  .lbox{border-radius:10px;padding:10px 11px;}
+  .lbox.g{background:var(--sc-bg);border:1px solid var(--sc-line);}
+  .lbox.w{background:var(--wn-bg);border:1px solid var(--wn-line);}
+  .lbox .lt{font-size:11px;font-weight:600;margin:0 0 5px;}
+  .lbox.g .lt{color:var(--sc-ink);} .lbox.w .lt{color:var(--wn-ink);}
+  .lbox p{font-size:12px;margin:0;line-height:1.5;}
+  .lbox.g p{color:var(--sc-ink);} .lbox.w p{color:var(--wn-ink);}
+  /* TITRATION TABLE */
+  .tit-table{width:100%;border-collapse:collapse;border-radius:11px;overflow:hidden;border:1px solid var(--pr-line);margin-top:9px;font-size:12px;}
+  .tit-table th{padding:6px 9px;text-align:left;background:var(--pr-bg);color:var(--pr-ink);font-weight:600;font-size:11px;}
+  .tit-table td{padding:7px 9px;border-top:1px solid var(--pr-line);vertical-align:top;line-height:1.5;color:var(--ink);}
+  .tit-table tr:nth-child(even) td{background:#faf8ff;}
+  .ind{border-radius:11px;padding:11px 12px;margin-bottom:8px;}
+  .ind:last-child{margin-bottom:0;}
+  .ind.r{border:1px solid var(--dg-line);}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:7px;}
+  .pill svg{width:12px;height:12px;stroke-width:2;fill:none;}
+  .r .pill{background:var(--dg-bg);color:var(--dg-ink);} .r .pill svg{stroke:var(--dg-ink);}
+  ul{margin:0;padding-left:18px;}
+  li{font-size:12.5px;line-height:1.65;color:var(--ink);margin:1px 0;}
+  b{font-weight:700;}
+  .watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:2px;}
+  .wc{border-radius:9px;padding:9px 10px;}
+  .wc.r{background:var(--dg-bg);}
+  .wc.y{background:var(--wn-bg);}
+  .wc .wt{font-size:11px;font-weight:600;margin:0 0 4px;}
+  .wc.r .wt{color:var(--dg-ink);} .wc.y .wt{color:var(--wn-ink);}
+  .wc ul{padding-left:14px;}
+  .wc li{font-size:11.5px;line-height:1.55;margin:1px 0;}
+  .wc.r li{color:var(--dg-ink);} .wc.y li{color:var(--wn-ink);}
+  .ci{margin-top:8px;background:var(--dg-bg);border-radius:11px;padding:10px 12px;}
+  .ci-t{font-size:11px;font-weight:600;color:var(--dg-ink);margin:0 0 4px;display:flex;align-items:center;gap:5px;}
+  .ci-t svg{width:13px;height:13px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .ci ul{padding-left:16px;}
+  .ci li{font-size:12px;line-height:1.55;color:var(--dg-ink);}
+  .dc{margin-top:13px;background:var(--wn-bg);border-radius:11px;padding:11px 13px;}
+  .dc-t{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+    letter-spacing:.04em;color:var(--wn-ink);text-transform:uppercase;margin:0 0 5px;}
+  .dc-t svg{width:14px;height:14px;stroke:var(--wn-ink);stroke-width:2;fill:none;}
+  .dc p{margin:0;font-size:12.5px;line-height:1.5;color:var(--wn-ink);}
+  .foot{margin-top:14px;padding-top:11px;border-top:1px solid var(--line);}
+  .foot p{margin:0;font-size:11.5px;line-height:1.5;color:var(--ink2);display:flex;gap:6px;}
+  .foot p svg{width:14px;height:14px;stroke:var(--ink2);stroke-width:1.7;fill:none;flex:none;margin-top:1px;}
+  .foot .ref{margin-top:5px;font-size:10.5px;color:var(--muted);display:block;}
+  @media print{body{background:#fff;}.wrap{padding:0;}.card{border:none;border-radius:0;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <div class="head">
+    <div class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2 h4"/>
+        <path d="M11 2 v3 M13 2 v3"/>
+        <path d="M9 5 h6"/>
+        <path d="M9 5 L7 9 L7 18 Q7 21 12 21 Q17 21 17 18 L17 9 L15 5"/>
+        <path d="M8 15 h8"/>
+      </svg>
+    </div>
+    <div>
+      <p class="name">Nicardipine</p>
+      <p class="sub">injection 2 mg/2 mL (1 mg/mL) · calcium channel blocker · antihypertensive</p>
+    </div>
+    <span class="ha">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+      High alert
+    </span>
+  </div>
+
+  <div class="alert">
+    <p class="alert-t">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+      ข้อควรระวังสำคัญ
+    </p>
+    <ul>
+      <li><b>ต้องเจือจางก่อนให้เสมอ</b> ห้ามให้ 1 mg/mL โดยไม่เจือจาง · ความเข้มข้นมาตรฐาน <b>0.1 mg/mL</b></li>
+      <li><b>ลดความดันเร็วเกินไปอันตราย</b> — โดยเฉพาะผู้ป่วย stroke หรือ ICH อาจทำให้สมองขาดเลือด</li>
+      <li><b>peripheral line: เปลี่ยนตำแหน่งเส้นทุก 12 ชม.</b> เพราะยากัดหลอดเลือด เสี่ยง phlebitis</li>
+      <li><b>ไม่ใช่ beta-blocker</b> — ไม่ป้องกันอาการถอนยา beta-blocker ห้ามหยุด beta-blocker ทันที</li>
+    </ul>
+  </div>
+
+  <div class="incompat">
+    <p class="incompat-t">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      ห้ามผสมหรือให้ร่วมสาย IV เดียวกัน
+    </p>
+    <ul>
+      <li><b>Sodium bicarbonate (NaHCO₃)</b> — ตกตะกอน ยาเสื่อมสภาพ</li>
+      <li><b>Lactated Ringer's solution</b> — ไม่เข้ากัน</li>
+      <li>ตรวจสายให้ยาก่อนเสมอ · flush เส้นด้วย NSS ก่อนและหลังให้ยา</li>
+    </ul>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 19 18l-5-9V3M7.5 14h9"/></svg>
+      ความแรง / รูปแบบ
+    </p>
+    <div class="str-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2 h4"/>
+        <path d="M11 2 v3 M13 2 v3"/>
+        <path d="M9 5 h6"/>
+        <path d="M9 5 L7 9 L7 18 Q7 21 12 21 Q17 21 17 18 L17 9 L15 5"/>
+        <path d="M8 15 h8"/>
+      </svg>
+      <div>
+        <p class="sv">2 mg / 2 mL (1 mg/mL)</p>
+        <p class="sd">สีเหลืองอ่อน · ต้องเจือจางก่อนให้เสมอ · ห้ามใช้ถ้าขุ่น มีตะกอน หรือสีเข้มผิดปกติ</p>
+      </div>
+    </div>
+
+    <div class="mix">
+      <p class="mix-t">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 19 18l-5-9V3M7.5 14h9"/></svg>
+        วิธีเตรียม / ผสมยา (ความเข้มข้นมาตรฐาน 0.1 mg/mL)
+      </p>
+      <ul>
+        <li>ดูด nicardipine <b>2 mL (2 mg)</b> + NSS หรือ D5W <b>18 mL</b> = 20 mL → <b>0.1 mg/mL</b></li>
+        <li>หรือดูด nicardipine <b>10 mL (10 mg)</b> + NSS หรือ D5W <b>90 mL</b> = 100 mL → <b>0.1 mg/mL</b></li>
+        <li>สารละลายที่เข้ากันได้: NSS, D5W, D5NSS, D5W + KCl 40 mEq</li>
+        <li>คงตัว <b>24 ชม.</b> หลังผสม · เก็บพ้นแสง</li>
+      </ul>
+    </div>
+
+    <div class="line-grid">
+      <div class="lbox g">
+        <p class="lt">✅ Central line (แนะนำ)</p>
+        <p>ให้ความเข้มข้นสูงขึ้นได้ · ลดความเสี่ยง phlebitis · เหมาะสำหรับ infusion ระยะยาว</p>
+      </div>
+      <div class="lbox w">
+        <p class="lt">⚠ Peripheral line</p>
+        <p>ความเข้มข้น <b>0.1 mg/mL</b> เท่านั้น · เปลี่ยนตำแหน่ง <b>ทุก 12 ชม.</b> · ใช้เส้นใหญ่ antecubital เท่านั้น</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h9M9 12h9M9 19h9M4 5h.01M4 12h.01M4 19h.01"/></svg>
+      ข้อบ่งใช้ + ขนาด + วิธีบริหาร
+    </p>
+
+    <div class="ind r">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        ความดันสูงวิกฤต (Hypertensive emergency) · IV infusion
+      </span>
+      <ul>
+        <li>เริ่ม <b>5 mg/hr</b> · ผ่าน infusion pump เท่านั้น</li>
+        <li>ปรับขึ้น <b>2.5 mg/hr</b> ทุก <b>5 นาที</b> (ฉุกเฉิน) หรือทุก 15–30 นาที (ค่อยๆ ลด)</li>
+        <li>ขนาดสูงสุด <b>15 mg/hr</b></li>
+        <li>เมื่อได้ BP เป้าหมายแล้ว: ลดเหลือ <b>3 mg/hr</b> เพื่อ maintenance</li>
+        <li>ถ้าความดันตกหรือหัวใจเต้นเร็วผิดปกติ → หยุดยา · เมื่อคงตัวแล้วเริ่มให้ใหม่ที่ <b>3–5 mg/hr</b></li>
+      </ul>
+    </div>
+
+    <!-- ตารางอัตราหยด mL/hr ตามความเข้มข้น 0.1 mg/mL -->
+    <table class="tit-table">
+      <thead>
+        <tr>
+          <th>ขนาดยา (mg/hr)</th>
+          <th>อัตราหยด (mL/hr)<br><small>ที่ 0.1 mg/mL</small></th>
+          <th>ระยะ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>5 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--sc-ink);">50 mL/hr</td>
+          <td style="color:var(--ink2);">เริ่มต้น</td>
+        </tr>
+        <tr>
+          <td><b>7.5 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--ac-ink);">75 mL/hr</td>
+          <td style="color:var(--ink2);">ปรับครั้งที่ 1</td>
+        </tr>
+        <tr>
+          <td><b>10 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--wn-ink);">100 mL/hr</td>
+          <td style="color:var(--ink2);">ปรับครั้งที่ 2</td>
+        </tr>
+        <tr>
+          <td><b>12.5 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--wn-ink);">125 mL/hr</td>
+          <td style="color:var(--ink2);">ปรับครั้งที่ 3</td>
+        </tr>
+        <tr>
+          <td><b>15 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--dg-ink);">150 mL/hr</td>
+          <td style="color:var(--dg-ink);font-weight:600;">สูงสุด</td>
+        </tr>
+        <tr>
+          <td><b>3 mg/hr</b></td>
+          <td style="text-align:center;font-weight:600;color:var(--sc-ink);">30 mL/hr</td>
+          <td style="color:var(--ink2);">Maintenance</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg>
+      เฝ้าระวังหลังบริหาร
+    </p>
+    <div class="watch-grid">
+      <div class="wc r">
+        <p class="wt">⚠ แจ้งแพทย์ทันที / แนวทางแก้ไข</p>
+        <ul>
+          <li><b>ความดันต่ำ (hypotension)</b> → หยุดยาทันที · IV fluid · แจ้งแพทย์ · restart ที่ 3 mg/hr</li>
+          <li><b>HR &gt; 120 ครั้ง/นาที</b> (reflex tachycardia) → ลดอัตรา · แจ้งแพทย์</li>
+          <li><b>Phlebitis</b> (บวม แดง ร้อน) → เปลี่ยนตำแหน่งเส้นทันที · พิจารณา central line</li>
+          <li><b>เจ็บหน้าอก / ปวดหัวรุนแรง</b> → ลดอัตรา · แจ้งแพทย์ · ECG</li>
+        </ul>
+      </div>
+      <div class="wc y">
+        <p class="wt">ติดตามต่อเนื่อง</p>
+        <ul>
+          <li>BP ทุก 5 นาทีระหว่างปรับขนาด · ทุก 15 นาทีเมื่อคงที่</li>
+          <li>HR · cardiac monitor ตลอด</li>
+          <li>ตำแหน่งเส้น peripheral ทุก 2–4 ชม.</li>
+          <li>ปวดหัว หน้าแดง ร้อนวูบ (พบบ่อย มักชั่วคราว)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ci">
+      <p class="ci-t">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        ห้ามใช้ / ข้อควรระวังพิเศษ
+      </p>
+      <ul>
+        <li><b>ห้ามใช้ใน advanced aortic stenosis</b> — ลด afterload ทำให้หัวใจทำงานแย่ลง</li>
+        <li>ผู้ป่วย stroke หรือ ICH — ระวังลดความดันเร็วเกินไป เสี่ยงสมองขาดเลือด</li>
+        <li>CHF / angina / ตับวาย — ลดขนาดและเฝ้าระวังใกล้ชิด</li>
+        <li><b>Cimetidine</b> — เพิ่มระดับ nicardipine ในเลือด ต้องลดขนาด</li>
+        <li>Cyclosporine / tacrolimus — nicardipine เพิ่มระดับยาเหล่านี้ ต้อง monitor trough level</li>
+        <li>Pheochromocytoma — ระวัง reflex tachycardia รุนแรง</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dc">
+    <p class="dc-t">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L12 8M13 15l3 3 5-9"/></svg>
+      Double-check ก่อนให้
+    </p>
+    <p>ตรวจซ้ำ 2 คน: <b>ความเข้มข้นหลังผสม (0.1 mg/mL) + อัตราหยด (mL/hr) + pump setting + ตำแหน่งเส้น</b> · บันทึกเวลาเริ่มให้ยาทาง peripheral line (ต้องเปลี่ยนภายใน 12 ชม.) · เปิด BP monitor พร้อม</p>
+  </div>
+
+  <div class="foot">
+    <p>
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>ค่าอ้างอิงทั่วไป ต้องยืนยันกับแนวทาง/formulary ของโรงพยาบาล และผ่านการตรวจสอบโดยเภสัชกรก่อนใช้จริง</span>
+    </p>
+    <span class="ref">อ้างอิง: FDA package insert (Nicardipine HCl Injection) · DailyMed (NIH) · ACC/AHA Hypertension Guidelines · ISMP high-alert medications</span>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

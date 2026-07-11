@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adrenaline (epinephrine) — การ์ดยาความเสี่ยงสูง</title>
+<title>Atropine — การ์ดยาความเสี่ยงสูง</title>
 <style>
   :root{
     --page:#eef0f2; --card:#ffffff;
@@ -19,40 +19,29 @@
     color:var(--ink);-webkit-font-smoothing:antialiased;}
   .wrap{max-width:460px;margin:0 auto;padding:14px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;}
-  /* HEAD */
   .head{display:flex;align-items:center;gap:11px;}
-  .head .ic{width:40px;height:40px;border-radius:11px;background:var(--dg-bg);
+  .head .ic{width:40px;height:40px;border-radius:11px;background:var(--ac-bg);
     display:flex;align-items:center;justify-content:center;flex:none;}
-  .head .ic svg{width:22px;height:22px;stroke:var(--dg-ink);stroke-width:1.7;fill:none;}
+  .head .ic svg{width:22px;height:22px;stroke:var(--ac-ink);stroke-width:1.7;fill:none;}
   .name{font-size:19px;font-weight:600;line-height:1.2;margin:0;}
   .sub{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
   .ha{margin-left:auto;flex:none;background:var(--dg-bg);color:var(--dg-ink);
     font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;
     display:inline-flex;align-items:center;gap:4px;}
   .ha svg{width:12px;height:12px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
-  /* ALERT */
   .alert{margin-top:14px;background:var(--dg-bg);border-radius:11px;padding:12px 13px;}
   .alert-t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dg-ink);margin:0 0 6px;}
   .alert-t svg{width:15px;height:15px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
   .alert ul{margin:0;padding-left:16px;}
   .alert li{font-size:12.5px;line-height:1.6;color:var(--dg-ink);}
-  /* SECT */
   .sect{margin-top:15px;}
   .lbl{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;
     letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:0 0 8px;}
   .lbl svg{width:14px;height:14px;stroke:var(--muted);stroke-width:1.8;fill:none;}
-  /* CONC TABLE */
-  .conc-table{width:100%;border-collapse:collapse;border-radius:11px;overflow:hidden;border:1px solid var(--line);}
-  .conc-table th{padding:7px 10px;font-size:11px;font-weight:600;text-align:left;background:var(--page);}
-  .conc-table td{padding:8px 10px;font-size:12.5px;border-top:1px solid var(--line);vertical-align:top;line-height:1.5;}
-  .conc-table .h-g{background:var(--sc-bg);color:var(--sc-ink);}
-  .conc-table .h-r{background:var(--dg-bg);color:var(--dg-ink);}
-  .conc-table .d-g{background:#f4fbf7;}
-  .conc-table .d-r{background:#fff8f8;}
-  .tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:20px;margin-bottom:4px;}
-  .tag-g{background:var(--sc-bg);color:var(--sc-ink);}
-  .tag-r{background:var(--dg-bg);color:var(--dg-ink);}
-  /* IND */
+  .str-box{background:var(--ac-bg);border:1px solid #b8d8f5;border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:12px;}
+  .str-box svg{width:28px;height:28px;stroke:var(--ac-ink);stroke-width:1.6;fill:none;flex:none;}
+  .str-box .sv{font-size:15px;font-weight:700;color:var(--ac-ink);margin:0;}
+  .str-box .sd{font-size:12px;color:var(--ac-ink);margin:2px 0 0;opacity:.85;}
   .ind{border-radius:11px;padding:11px 12px;margin-bottom:8px;}
   .ind:last-child{margin-bottom:0;}
   .ind.g{border:1px solid var(--sc-line);}
@@ -66,7 +55,6 @@
   ul{margin:0;padding-left:18px;}
   li{font-size:12.5px;line-height:1.65;color:var(--ink);margin:1px 0;}
   b{font-weight:700;}
-  /* WATCH */
   .watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:2px;}
   .wc{border-radius:9px;padding:9px 10px;}
   .wc.r{background:var(--dg-bg);}
@@ -78,19 +66,16 @@
   .wc li{font-size:11.5px;line-height:1.55;margin:1px 0;}
   .wc.r li{color:var(--dg-ink);}
   .wc.y li{color:var(--wn-ink);}
-  /* CI */
   .ci{margin-top:8px;background:var(--dg-bg);border-radius:11px;padding:10px 12px;}
   .ci-t{font-size:11px;font-weight:600;color:var(--dg-ink);margin:0 0 4px;display:flex;align-items:center;gap:5px;}
   .ci-t svg{width:13px;height:13px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
   .ci ul{padding-left:16px;}
   .ci li{font-size:12px;line-height:1.55;color:var(--dg-ink);}
-  /* DC */
   .dc{margin-top:13px;background:var(--wn-bg);border-radius:11px;padding:11px 13px;}
   .dc-t{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
     letter-spacing:.04em;color:var(--wn-ink);text-transform:uppercase;margin:0 0 5px;}
   .dc-t svg{width:14px;height:14px;stroke:var(--wn-ink);stroke-width:2;fill:none;}
   .dc p{margin:0;font-size:12.5px;line-height:1.5;color:var(--wn-ink);}
-  /* FOOT */
   .foot{margin-top:14px;padding-top:11px;border-top:1px solid var(--line);}
   .foot p{margin:0;font-size:11.5px;line-height:1.5;color:var(--ink2);display:flex;gap:6px;}
   .foot p svg{width:14px;height:14px;stroke:var(--ink2);stroke-width:1.7;fill:none;flex:none;margin-top:1px;}
@@ -102,7 +87,6 @@
 <div class="wrap">
 <div class="card">
 
-  <!-- HEAD -->
   <div class="head">
     <div class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -114,8 +98,8 @@
       </svg>
     </div>
     <div>
-      <p class="name">Adrenaline (epinephrine)</p>
-      <p class="sub">injection · vasopressor / sympathomimetic</p>
+      <p class="name">Atropine</p>
+      <p class="sub">injection 0.6 mg/mL · anticholinergic / antiarrhythmic</p>
     </div>
     <span class="ha">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
@@ -123,65 +107,35 @@
     </span>
   </div>
 
-  <!-- ข้อควรระวังสำคัญ -->
   <div class="alert">
     <p class="alert-t">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
       ข้อควรระวังสำคัญ
     </p>
     <ul>
-      <li>ยามี <b>2 ความเข้มข้น</b> ที่แตกต่างกัน <b>10 เท่า</b> — ต้องเลือกให้ถูกตามอาการ</li>
-      <li><b>ห้ามให้ 1:1,000 ทาง IV</b> — เสี่ยงหัวใจเต้นผิดจังหวะ/กล้ามเนื้อหัวใจตาย</li>
-      <li>ให้ขนาด cardiac arrest แก่ผู้ป่วยแพ้ → อันตรายถึงชีวิต</li>
+      <li><b>ห้ามให้ขนาดต่ำกว่า 0.5 mg</b> ใน IV — อาจทำให้หัวใจเต้นช้าลงผิดปกติ (paradoxical bradycardia)</li>
+      <li><b>ห้ามใช้ในผู้ป่วยปลูกถ่ายหัวใจ</b> — เสี่ยง AV block หรือหัวใจหยุดเต้นกะทันหัน</li>
+      <li><b>Mobitz II / 3rd degree AV block (wide QRS)</b> — atropine ไม่ได้ผล และอาจทำให้แย่ลง ต้องเตรียม pacing ทันที</li>
     </ul>
   </div>
 
-  <!-- ความแรง / รูปแบบ -->
   <div class="sect">
     <p class="lbl">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 19 18l-5-9V3M7.5 14h9"/></svg>
-      ความแรง / รูปแบบ — เลือกให้ถูกตามอาการ
+      ความแรง / รูปแบบ
     </p>
-
-    <table class="conc-table">
-      <thead>
-        <tr>
-          <th class="h-g">🟢 แพ้รุนแรง (Anaphylaxis)<br><small>ฉีดเข้ากล้ามเนื้อ (IM)</small></th>
-          <th class="h-r">🔴 หัวใจหยุดเต้น (Cardiac arrest)<br><small>ฉีดเข้าเส้นเลือด (IV/IO)</small></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="d-g">
-            <span class="tag tag-g">1:1,000</span><br>
-            <b>1 mg ใน 1 mL</b><br>
-            เข้มข้นกว่า 10 เท่า<br>
-            <small style="color:var(--sc-ink);">ไม่ต้องผสม ดูดตรงจาก vial</small>
-          </td>
-          <td class="d-r">
-            <span class="tag tag-r">1:10,000</span><br>
-            <b>1 mg ใน 10 mL</b><br>
-            เจือจางกว่า 10 เท่า<br>
-            <small style="color:var(--dg-ink);">มักมี predrawn syringe สำเร็จ</small>
-          </td>
-        </tr>
-        <tr>
-          <td class="d-g" style="font-size:12px;">
-            ผู้ใหญ่/≥30 kg:<br>
-            ดูด <b>0.3–0.5 mL</b> จาก vial<br>
-            ฉีด IM ต้นขาด้านนอก
-          </td>
-          <td class="d-r" style="font-size:12px;">
-            ผู้ใหญ่:<br>
-            ดูด <b>10 mL</b> (= 1 mg)<br>
-            ฉีด IV/IO เร็ว · flush NSS 20 mL
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="str-box">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="2" width="8" height="20" rx="2"/>
+        <path d="M12 6v4M10 8h4"/>
+      </svg>
+      <div>
+        <p class="sv">0.6 mg / 1 mL</p>
+        <p class="sd">vial · ใส ไม่มีสี · ให้ได้โดยไม่ต้องผสมในกรณีฉุกเฉิน · ดูดตรงจาก vial</p>
+      </div>
+    </div>
   </div>
 
-  <!-- ข้อบ่งใช้ + ขนาด -->
   <div class="sect">
     <p class="lbl">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h9M9 12h9M9 19h9M4 5h.01M4 12h.01M4 19h.01"/></svg>
@@ -190,44 +144,44 @@
 
     <div class="ind g">
       <span class="pill">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg>
-        แพ้รุนแรง (Anaphylaxis) · ฉีดเข้ากล้ามเนื้อ IM
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        หัวใจเต้นช้าผิดปกติ (Symptomatic bradycardia) · IV
       </span>
       <ul>
-        <li>ใช้ <b>1:1,000</b> (1 mg/mL) — ดูดจาก vial ได้เลย <b>ไม่ต้องผสม</b></li>
-        <li>ผู้ใหญ่/น้ำหนัก ≥30 kg: ดูด <b>0.3–0.5 mL</b> ฉีด IM ที่ต้นขาด้านนอก</li>
-        <li>เด็กน้ำหนัก &lt;30 kg: คำนวณ 0.01 mg/kg (สูงสุด 0.3 mg = 0.3 mL) ฉีด IM</li>
-        <li>ซ้ำได้ทุก 5–15 นาที ถ้าอาการไม่ดีขึ้น · <b>ห้ามให้ทาง IV เด็ดขาด</b></li>
+        <li>ขนาด <b>0.5–1 mg</b> IV push ช้าๆ ใน 1 นาที · <b>ห้ามให้น้อยกว่า 0.5 mg</b></li>
+        <li>ให้ซ้ำได้ทุก 3–5 นาที จนได้ผล</li>
+        <li>ขนาดสะสมสูงสุด <b>3 mg</b> (= 0.04 mg/kg)</li>
+        <li>ถ้าไม่ตอบสนอง → เตรียม transcutaneous pacing หรือ dopamine/adrenaline infusion</li>
+        <li>เด็ก: 0.02 mg/kg IV (ขั้นต่ำ 0.1 mg สูงสุด 0.5 mg/ครั้ง) · ซ้ำได้ 1 ครั้ง</li>
       </ul>
     </div>
 
     <div class="ind r">
       <span class="pill">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
-        หัวใจหยุดเต้น (Cardiac arrest) · ฉีดเข้าเส้นเลือด IV/IO
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+        พิษจากสารกำจัดแมลง/ออร์กาโนฟอสเฟต · IV
       </span>
       <ul>
-        <li>ใช้ <b>1:10,000</b> (0.1 mg/mL) — มักมี predrawn 10 mL syringe สำเร็จ</li>
-        <li>ผู้ใหญ่: ดูด <b>10 mL</b> (= 1 mg) ฉีด IV/IO เร็ว ตามด้วย NSS flush 20 mL</li>
-        <li>ให้ซ้ำทุก 3–5 นาที ตลอดการ CPR</li>
-        <li>เด็ก: 0.01 mg/kg (0.1 mL/kg ของ 1:10,000) สูงสุด 1 mg/ครั้ง</li>
+        <li>ขนาดเริ่มต้น <b>2–4 mg</b> IV push ทุก 5–10 นาที จนสารคัดหลั่งแห้ง</li>
+        <li><b>ไม่มีขนาดสูงสุดที่กำหนดไว้</b> — titrate จนหลอดลมแห้ง/หายใจดีขึ้น</li>
+        <li>เด็ก: 0.05 mg/kg IV ทุก 10–20 นาที จนได้ผล</li>
+        <li>ยาจะแก้ได้เฉพาะ <b>muscarinic effects</b> เท่านั้น (น้ำลายไหล หลอดลมหดเกร็ง ชีพจรช้า) — ไม่แก้ nicotinic effects (กล้ามเนื้ออ่อนแรง)</li>
+        <li>ใช้ร่วมกับ pralidoxime เพื่อแก้ nicotinic effects</li>
       </ul>
     </div>
 
     <div class="ind w">
       <span class="pill">
         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
-        ความดันต่ำรุนแรง (Septic/Distributive shock) · หยดเข้าเส้น IV
+        ก่อนทำหัตถการ / ลด secretion · IV หรือ IM
       </span>
       <ul>
-        <li>ผสม adrenaline <b>1 mg (1 mL ของ 1:1,000)</b> ใน D5W <b>250 mL</b></li>
-        <li>ได้ความเข้มข้น <b>4 mcg/mL</b> — ต้องผ่าน infusion pump เสมอ</li>
-        <li>เริ่ม 1–4 mcg/min ปรับขึ้นตามความดัน · <b>ควรให้ทาง central line</b></li>
+        <li>ขนาด <b>0.4–0.6 mg</b> IV หรือ IM ก่อนทำหัตถการ 30–60 นาที</li>
+        <li>ลดน้ำลายและสารคัดหลั่งในทางเดินหายใจ ช่วยระหว่าง intubation</li>
       </ul>
     </div>
   </div>
 
-  <!-- เฝ้าระวัง -->
   <div class="sect">
     <p class="lbl">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg>
@@ -237,17 +191,19 @@
       <div class="wc r">
         <p class="wt">⚠ แจ้งแพทย์ทันที / แนวทางแก้ไข</p>
         <ul>
-          <li><b>ความดันพุ่งสูง/เจ็บหน้าอก</b> → ลดอัตรา/หยุด infusion · แจ้งแพทย์</li>
-          <li><b>หัวใจเต้นผิดจังหวะ</b> → หยุดยา · on cardiac monitor · แจ้งแพทย์</li>
-          <li><b>ยารั่วออกนอกเส้น</b> (บวม แดง) → หยุด infusion ทันที · เปลี่ยนตำแหน่ง · แจ้งแพทย์พิจารณา phentolamine</li>
+          <li><b>หัวใจเต้นเร็วเกินไป (HR &gt;120)</b> → ลดขนาด/หยุดยา · แจ้งแพทย์</li>
+          <li><b>หัวใจเต้นช้าลง</b> (paradoxical) → เกิดจากขนาดต่ำเกินไป → เพิ่มขนาดหรือหยุด · แจ้งแพทย์</li>
+          <li><b>กระสับกระส่าย สับสน เพ้อ</b> → อาการ anticholinergic toxicity → หยุดยา · แจ้งแพทย์ทันที</li>
+          <li><b>ปัสสาวะไม่ออก</b> → แจ้งแพทย์ · พิจารณาสวนปัสสาวะ</li>
         </ul>
       </div>
       <div class="wc y">
         <p class="wt">ติดตามต่อเนื่อง</p>
         <ul>
-          <li>วัด BP · HR · ดู cardiac monitor ตลอด</li>
-          <li>สังเกตตำแหน่งเส้น: ถ้ายารั่วออกนอก → เนื้อตายได้</li>
-          <li>มือสั่น ใจสั่น กระวนกระวาย ปวดหัว (มักหายเอง)</li>
+          <li>HR · BP · cardiac monitor ตลอด</li>
+          <li>ปากแห้ง ตาพร่า หน้าแดง (พบบ่อย มักหายเอง)</li>
+          <li>กรณีพิษออร์กาโนฟอสเฟต: ติดตามสารคัดหลั่งในหลอดลมเป็นหลัก</li>
+          <li>อุณหภูมิกาย: atropine ลดเหงื่อ → เสี่ยงตัวร้อน</li>
         </ul>
       </div>
     </div>
@@ -257,29 +213,29 @@
         ห้ามใช้ / ข้อควรระวังพิเศษ
       </p>
       <ul>
-        <li><b>ห้ามให้ 1:1,000 ทาง IV</b> — ต้องใช้ 1:10,000 เท่านั้นสำหรับ IV</li>
-        <li>ระวังในผู้ป่วยโรคหัวใจ ความดันสูง ต่อมไทรอยด์เป็นพิษ</li>
-        <li>IV infusion ควรให้ทาง central line เสมอถ้าทำได้</li>
+        <li><b>ห้ามใช้ในผู้ป่วยปลูกถ่ายหัวใจ</b> — เสี่ยง AV block/หัวใจหยุดเต้น</li>
+        <li><b>Mobitz II / 3rd degree AV block (wide QRS)</b> — ไม่ได้ผล อาจทำให้แย่ลง → ต้องใช้ pacing</li>
+        <li>ระวัง: ต้อหินชนิด narrow-angle · ต่อมลูกหมากโต · ลำไส้อุดตัน</li>
+        <li>ระวังในผู้สูงอายุ: เสี่ยงสับสน เพ้อ ปัสสาวะไม่ออก</li>
+        <li>ยาที่เพิ่มผลข้างเคียง: antihistamine, tricyclic antidepressants (เพิ่ม anticholinergic)</li>
       </ul>
     </div>
   </div>
 
-  <!-- Double check -->
   <div class="dc">
     <p class="dc-t">
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L12 8M13 15l3 3 5-9"/></svg>
       Double-check ก่อนให้
     </p>
-    <p>ตรวจซ้ำ 2 คน: <b>ความเข้มข้น (1:1,000 หรือ 1:10,000?) + วิธีให้ (IM หรือ IV?) + ขนาด</b> · ระบุอาการที่ให้ให้ชัดเจนก่อนดึงยา · มี cardiac monitor พร้อมข้างเตียง</p>
+    <p>ตรวจซ้ำ 2 คน: <b>ข้อบ่งใช้ + ขนาด (≥0.5 mg) + ประวัติปลูกถ่ายหัวใจ + ดู ECG ยืนยัน rhythm ก่อนเสมอ</b> · มี cardiac monitor และอุปกรณ์ pacing พร้อมข้างเตียง</p>
   </div>
 
-  <!-- FOOT -->
   <div class="foot">
     <p>
       <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
       <span>ค่าอ้างอิงทั่วไป ต้องยืนยันกับแนวทาง/formulary ของโรงพยาบาล และผ่านการตรวจสอบโดยเภสัชกรก่อนใช้จริง</span>
     </p>
-    <span class="ref">อ้างอิง: 2020 AHA/ACLS guidelines · แนวทาง anaphylaxis · ISMP high-alert medications</span>
+    <span class="ref">อ้างอิง: 2020 AHA/ACLS guidelines · StatPearls (NCBI) · FDA package insert · ISMP high-alert medications</span>
   </div>
 
 </div>

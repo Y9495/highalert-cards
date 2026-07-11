@@ -6,10 +6,10 @@
 <title>ยาความเสี่ยงสูง — การ์ดอ้างอิงสำหรับพยาบาล</title>
 <style>
   :root{
-    --page:#eef0f2; --card:#ffffff;
-    --ink:#1f2430; --ink2:#5b6270; --muted:#8b90a0; --line:#e7e9ee;
-    --dg-bg:#fdecec; --dg-ink:#a12525;
-    --ac-bg:#e9f2fb; --ac-ink:#1f6fb2;
+    --page:#eef0f2;--card:#ffffff;
+    --ink:#1f2430;--ink2:#5b6270;--muted:#8b90a0;--line:#e7e9ee;
+    --dg-bg:#fdecec;--dg-ink:#a12525;
+    --ac-bg:#e9f2fb;--ac-ink:#1f6fb2;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--page);
@@ -19,36 +19,31 @@
   .top{display:flex;align-items:center;gap:11px;margin-bottom:4px;}
   .top .ic{width:40px;height:40px;border-radius:11px;background:var(--dg-bg);
     display:flex;align-items:center;justify-content:center;flex:none;}
-  .top .ic svg{width:22px;height:22px;stroke:var(--dg-ink);stroke-width:1.8;}
+  .top .ic svg{width:22px;height:22px;stroke:var(--dg-ink);stroke-width:1.8;fill:none;}
   h1{font-size:20px;font-weight:600;margin:0;line-height:1.2;}
   .lede{font-size:13px;color:var(--ink2);margin:2px 0 0;}
-  .grid{margin-top:20px;display:grid;gap:11px;}
+  .grp{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--muted);
+    text-transform:uppercase;margin:20px 0 8px;padding-left:2px;}
+  .grid{display:grid;gap:9px;}
   a.item{display:flex;align-items:center;gap:13px;text-decoration:none;
     background:var(--card);border:1px solid var(--line);border-radius:13px;
-    padding:14px 15px;color:var(--ink);transition:border-color .15s,transform .05s;}
-  a.item:hover{border-color:#c9ccd6;}
-  a.item:active{transform:scale(.995);}
-  a.item .dot{width:38px;height:38px;border-radius:10px;background:var(--ac-bg);
+    padding:13px 15px;color:var(--ink);}
+  a.item .dot{width:36px;height:36px;border-radius:10px;background:var(--ac-bg);
     display:flex;align-items:center;justify-content:center;flex:none;}
-  a.item .dot svg{width:21px;height:21px;stroke:var(--ac-ink);stroke-width:1.7;}
-  a.item .tx{flex:1;min-width:0;}
-  a.item .nm{font-size:15.5px;font-weight:600;margin:0;}
-  a.item .ds{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
-  a.item .go{color:var(--muted);flex:none;}
-  a.item .go svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;}
-  .soon{opacity:.55;pointer-events:none;}
-  .soon .tag{font-size:10.5px;color:var(--muted);border:1px solid var(--line);
-    border-radius:20px;padding:2px 8px;margin-left:8px;white-space:nowrap;}
+  a.item .dot svg{width:20px;height:20px;stroke:var(--ac-ink);stroke-width:1.7;fill:none;}
+  a.item .tx{flex:1;}
+  a.item .nm{font-size:15px;font-weight:600;margin:0;}
+  a.item .ds{font-size:12px;color:var(--ink2);margin:2px 0 0;}
+  a.item .go svg{width:18px;height:18px;stroke:var(--muted);stroke-width:2;fill:none;}
   .foot{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);}
   .foot p{margin:0;font-size:11.5px;color:var(--ink2);line-height:1.55;}
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <div class="top">
-    <div class="ic" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+    <div class="ic">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
     </div>
     <div>
       <h1>ยาความเสี่ยงสูง</h1>
@@ -56,47 +51,48 @@
     </div>
   </div>
 
+  <!-- ICON DEFS -->
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="ico-amp" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 2h4"/><path d="M11 2v3M13 2v3"/><path d="M9 5h6"/>
+      <path d="M9 5L7 9L7 18Q7 21 12 21Q17 21 17 18L17 9L15 5"/><path d="M8 15h8"/>
+    </symbol>
+    <symbol id="ico-bag" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 8H5M19 8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2M19 8V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2"/>
+    </symbol>
+    <symbol id="ico-arr" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <p class="grp">ยาระบบหัวใจและหลอดเลือด</p>
   <div class="grid">
+    <a class="item" href="adrenaline.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Adrenaline (Epinephrine)</p><p class="ds">anaphylaxis · cardiac arrest · IV infusion</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="adenosine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Adenosine</p><p class="ds">SVT · rapid IV push</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="amiodarone.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Amiodarone</p><p class="ds">VF · VT · antiarrhythmic class III</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="atropine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Atropine</p><p class="ds">bradycardia · organophosphate poisoning</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="dopamine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Dopamine</p><p class="ds">inotrope · vasopressor · IV infusion</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="nicardipine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Nicardipine</p><p class="ds">hypertensive emergency · IV infusion</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="norepinephrine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Norepinephrine (Noradrenaline)</p><p class="ds">septic shock · vasopressor · first-line</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+  </div>
 
-    <a class="item" href="adrenaline.html">
-      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4M14 6l4 4M8.5 8.5l7 7M5 21l4-4M3 15l3-3 6 6-3 3z"/></svg></span>
-      <span class="tx">
-        <p class="nm">Adrenaline (epinephrine)</p>
-        <p class="ds">anaphylaxis · cardiac arrest · IV infusion</p>
-      </span>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6"/></svg></span>
-    </a>
+  <p class="grp">ยาแก้ปวด / Opioid</p>
+  <div class="grid">
+    <a class="item" href="morphine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Morphine</p><p class="ds">opioid analgesic · IV bolus / infusion</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="pethidine.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">Pethidine (Meperidine)</p><p class="ds">opioid analgesic · IM / IV</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+  </div>
 
-    <div class="item soon">
-      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
-      <span class="tx">
-        <p class="nm">Potassium chloride (KCl)<span class="tag">กำลังจัดทำ</span></p>
-        <p class="ds">concentrated electrolyte</p>
-      </span>
-    </div>
-
-    <div class="item soon">
-      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
-      <span class="tx">
-        <p class="nm">Insulin (regular, IV)<span class="tag">กำลังจัดทำ</span></p>
-        <p class="ds">high-alert · IV infusion</p>
-      </span>
-    </div>
-
-    <div class="item soon">
-      <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 20 18l-5-9V3M7 14h10"/></svg></span>
-      <span class="tx">
-        <p class="nm">Heparin<span class="tag">กำลังจัดทำ</span></p>
-        <p class="ds">anticoagulant · IV</p>
-      </span>
-    </div>
-
+  <p class="grp">Electrolyte / สารน้ำ</p>
+  <div class="grid">
+    <a class="item" href="calcium_gluconate.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">10% Calcium Gluconate</p><p class="ds">hypocalcemia · hyperkalemia · IV</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="kcl.html"><span class="dot"><svg><use href="#ico-bag"/></svg></span><span class="tx"><p class="nm">KCl 40 mEq/1,000 mL</p><p class="ds">premixed bag · hypokalemia · general ward</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="kcl20.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">KCl 20 mEq/L</p><p class="ds">concentrate vial · hypokalemia · pediatric</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="magnesium_sulfate.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">50% Magnesium Sulfate (MgSO₄)</p><p class="ds">eclampsia · hypomagnesemia · Torsades</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="nacl3.html"><span class="dot"><svg><use href="#ico-bag"/></svg></span><span class="tx"><p class="nm">3% NaCl (Hypertonic Saline)</p><p class="ds">hyponatremia · cerebral edema · IV</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
+    <a class="item" href="sodium_bicarbonate.html"><span class="dot"><svg><use href="#ico-amp"/></svg></span><span class="tx"><p class="nm">7.5% Sodium Bicarbonate</p><p class="ds">metabolic acidosis · cardiac arrest · IV</p></span><span class="go"><svg><use href="#ico-arr"/></svg></span></a>
   </div>
 
   <div class="foot">
     <p>เนื้อหาต้องผ่านการตรวจสอบโดยเภสัชกร และยืนยันกับแนวทาง/formulary ของโรงพยาบาลก่อนใช้จริง</p>
   </div>
-
 </div>
 </body>
 </html>

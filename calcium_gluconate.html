@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10% Calcium Gluconate — การ์ดยาความเสี่ยงสูง</title>
+<style>
+  :root{
+    --page:#eef0f2; --card:#ffffff;
+    --ink:#1f2430; --ink2:#5b6270; --muted:#8b90a0; --line:#e7e9ee;
+    --dg-bg:#fdecec; --dg-ink:#a12525; --dg-line:#e3a3a3;
+    --sc-bg:#e8f5ee; --sc-ink:#1a6b4a; --sc-line:#9ccbb4;
+    --wn-bg:#fbf0da; --wn-ink:#8a5a10; --wn-line:#e0bd76;
+    --ac-bg:#e9f2fb; --ac-ink:#1f6fb2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai","Sarabun",Roboto,Arial,sans-serif;
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:460px;margin:0 auto;padding:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;}
+  .head{display:flex;align-items:center;gap:11px;}
+  .head .ic{width:40px;height:40px;border-radius:11px;background:var(--sc-bg);
+    display:flex;align-items:center;justify-content:center;flex:none;}
+  .head .ic svg{width:22px;height:22px;stroke:var(--sc-ink);stroke-width:1.7;fill:none;}
+  .name{font-size:18px;font-weight:600;line-height:1.2;margin:0;}
+  .sub{font-size:12.5px;color:var(--ink2);margin:2px 0 0;}
+  .ha{margin-left:auto;flex:none;background:var(--dg-bg);color:var(--dg-ink);
+    font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:4px;}
+  .ha svg{width:12px;height:12px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .alert{margin-top:14px;background:var(--dg-bg);border-radius:11px;padding:12px 13px;}
+  .alert-t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dg-ink);margin:0 0 6px;}
+  .alert-t svg{width:15px;height:15px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .alert ul{margin:0;padding-left:16px;}
+  .alert li{font-size:12.5px;line-height:1.6;color:var(--dg-ink);}
+  .sect{margin-top:15px;}
+  .lbl{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;
+    letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:0 0 8px;}
+  .lbl svg{width:14px;height:14px;stroke:var(--muted);stroke-width:1.8;fill:none;}
+  .str-box{background:var(--sc-bg);border:1px solid var(--sc-line);border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:12px;}
+  .str-box svg{width:28px;height:28px;stroke:var(--sc-ink);stroke-width:1.6;fill:none;flex:none;}
+  .str-box .sv{font-size:15px;font-weight:700;color:var(--sc-ink);margin:0;}
+  .str-box .sd{font-size:12px;color:var(--sc-ink);margin:2px 0 0;opacity:.85;}
+  .incompat{margin-top:9px;background:var(--dg-bg);border:1px solid var(--dg-line);border-radius:11px;padding:10px 13px;}
+  .incompat-t{font-size:11px;font-weight:600;color:var(--dg-ink);margin:0 0 5px;display:flex;align-items:center;gap:5px;}
+  .incompat-t svg{width:13px;height:13px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .incompat ul{margin:0;padding-left:16px;}
+  .incompat li{font-size:12px;line-height:1.55;color:var(--dg-ink);}
+  .ind{border-radius:11px;padding:11px 12px;margin-bottom:8px;}
+  .ind:last-child{margin-bottom:0;}
+  .ind.g{border:1px solid var(--sc-line);}
+  .ind.r{border:1px solid var(--dg-line);}
+  .ind.w{border:1px solid var(--wn-line);}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:7px;}
+  .pill svg{width:12px;height:12px;stroke-width:2;fill:none;}
+  .g .pill{background:var(--sc-bg);color:var(--sc-ink);} .g .pill svg{stroke:var(--sc-ink);}
+  .r .pill{background:var(--dg-bg);color:var(--dg-ink);} .r .pill svg{stroke:var(--dg-ink);}
+  .w .pill{background:var(--wn-bg);color:var(--wn-ink);} .w .pill svg{stroke:var(--wn-ink);}
+  ul{margin:0;padding-left:18px;}
+  li{font-size:12.5px;line-height:1.65;color:var(--ink);margin:1px 0;}
+  b{font-weight:700;}
+  .watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:2px;}
+  .wc{border-radius:9px;padding:9px 10px;}
+  .wc.r{background:var(--dg-bg);}
+  .wc.y{background:var(--wn-bg);}
+  .wc .wt{font-size:11px;font-weight:600;margin:0 0 4px;}
+  .wc.r .wt{color:var(--dg-ink);}
+  .wc.y .wt{color:var(--wn-ink);}
+  .wc ul{padding-left:14px;}
+  .wc li{font-size:11.5px;line-height:1.55;margin:1px 0;}
+  .wc.r li{color:var(--dg-ink);}
+  .wc.y li{color:var(--wn-ink);}
+  .ci{margin-top:8px;background:var(--dg-bg);border-radius:11px;padding:10px 12px;}
+  .ci-t{font-size:11px;font-weight:600;color:var(--dg-ink);margin:0 0 4px;display:flex;align-items:center;gap:5px;}
+  .ci-t svg{width:13px;height:13px;stroke:var(--dg-ink);stroke-width:2;fill:none;}
+  .ci ul{padding-left:16px;}
+  .ci li{font-size:12px;line-height:1.55;color:var(--dg-ink);}
+  .dc{margin-top:13px;background:var(--wn-bg);border-radius:11px;padding:11px 13px;}
+  .dc-t{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+    letter-spacing:.04em;color:var(--wn-ink);text-transform:uppercase;margin:0 0 5px;}
+  .dc-t svg{width:14px;height:14px;stroke:var(--wn-ink);stroke-width:2;fill:none;}
+  .dc p{margin:0;font-size:12.5px;line-height:1.5;color:var(--wn-ink);}
+  .foot{margin-top:14px;padding-top:11px;border-top:1px solid var(--line);}
+  .foot p{margin:0;font-size:11.5px;line-height:1.5;color:var(--ink2);display:flex;gap:6px;}
+  .foot p svg{width:14px;height:14px;stroke:var(--ink2);stroke-width:1.7;fill:none;flex:none;margin-top:1px;}
+  .foot .ref{margin-top:5px;font-size:10.5px;color:var(--muted);display:block;}
+  @media print{body{background:#fff;}.wrap{padding:0;}.card{border:none;border-radius:0;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <div class="head">
+    <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2 h4"/>
+        <path d="M11 2 v3 M13 2 v3"/>
+        <path d="M9 5 h6"/>
+        <path d="M9 5 L7 9 L7 18 Q7 21 12 21 Q17 21 17 18 L17 9 L15 5"/>
+        <path d="M8 15 h8"/>
+      </svg>
+    </div>
+    <div>
+      <p class="name">10% Calcium Gluconate</p>
+      <p class="sub">injection 1 g/10 mL (100 mg/mL) · electrolyte replenishment</p>
+    </div>
+    <span class="ha">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+      High alert
+    </span>
+  </div>
+
+  <div class="alert">
+    <p class="alert-t">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+      ข้อควรระวังสำคัญ
+    </p>
+    <ul>
+      <li><b>ห้ามให้เร็วเกินไป</b> — เสี่ยงความดันต่ำ หัวใจเต้นช้า หรือหัวใจหยุดเต้น</li>
+      <li><b>ห้ามผสมหรือให้พร้อม ceftriaxone ทาง IV</b> — ตกตะกอนในหลอดเลือด อันตรายถึงชีวิต (ทารกแรกเกิด: ห้ามเด็ดขาด / เด็กโต-ผู้ใหญ่: flush เส้นให้สะอาดก่อนเสมอ)</li>
+      <li><b>ห้ามผสมกับ phosphate, bicarbonate หรือ sulfate</b> — ยาตกตะกอนทันที</li>
+      <li><b>ยารั่วออกนอกเส้น (extravasation)</b> — เนื้อตาย แผลเน่า ต้องตัดแขน/ขา มีรายงานผู้ป่วยถึงขั้นตัดแขน</li>
+    </ul>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a1.5 1.5 0 0 0 1.4 2.1h11.2A1.5 1.5 0 0 0 19 18l-5-9V3M7.5 14h9"/></svg>
+      ความแรง / รูปแบบ
+    </p>
+    <div class="str-box">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="2" width="8" height="20" rx="2"/>
+        <path d="M12 6v4M10 8h4"/>
+      </svg>
+      <div>
+        <p class="sv">10% = 1 g / 10 mL (100 mg/mL)</p>
+        <p class="sd">elemental calcium 9.3 mg/mL (0.465 mEq/mL) · ต่อ vial 10 mL = 93 mg (4.65 mEq) · ใส ไม่มีสี · ต้องเจือจางก่อนให้เสมอ</p>
+      </div>
+    </div>
+    <div class="incompat">
+      <p class="incompat-t">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        ห้ามผสมหรือให้ร่วมสาย IV เดียวกัน
+      </p>
+      <ul>
+        <li><b>Ceftriaxone</b> — ตกตะกอนในหลอดเลือด อันตรายถึงชีวิตโดยเฉพาะในทารก</li>
+        <li><b>Phosphate / Bicarbonate / Sulfate / Carbonate</b> — ยาตกตะกอนทันที</li>
+        <li><b>Minocycline</b> — แคลเซียมทำให้ยาสูญฤทธิ์</li>
+        <li><b>Digoxin</b> — เสี่ยงหัวใจเต้นผิดจังหวะรุนแรง ต้องให้ช้ามากและ monitor ECG</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h9M9 12h9M9 19h9M4 5h.01M4 12h.01M4 19h.01"/></svg>
+      ข้อบ่งใช้ + ขนาด + วิธีบริหาร
+    </p>
+
+    <div class="ind g">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
+        แคลเซียมในเลือดต่ำ (Hypocalcemia) · IV infusion
+      </span>
+      <ul>
+        <li>เจือจางใน NSS หรือ D5W ก่อนให้เสมอ</li>
+        <li>ไม่รุนแรง: <b>1–2 g</b> (10–20 mL) หยดใน 30–60 นาที</li>
+        <li>รุนแรง (ชัก/กล้ามเนื้อกระตุก): <b>1–2 g</b> (10–20 mL) ช้าๆ ใน 10 นาที ภายใต้ cardiac monitor</li>
+        <li>อัตราสูงสุด <b>ไม่เกิน 200 mg/min</b> ในผู้ใหญ่</li>
+        <li>เด็ก: 60 mg/kg หยดใน 30–60 นาที</li>
+      </ul>
+    </div>
+
+    <div class="ind r">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 4.3 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/></svg>
+        โพแทสเซียมสูง (Hyperkalemia) ที่มีผลต่อหัวใจ · IV
+      </span>
+      <ul>
+        <li>เจือจางใน NSS หรือ D5W ก่อนให้</li>
+        <li><b>15–30 mL</b> ของ 10% solution หยดใน 2–5 นาที ภายใต้ cardiac monitor ตลอด</li>
+        <li>ออกฤทธิ์ใน <b>1–3 นาที</b> · คุ้มครองหัวใจได้ <b>20–60 นาที</b></li>
+        <li>ถ้า ECG ยังผิดปกติ → ให้ซ้ำได้ หลังจากนั้นต้องลดระดับ K⁺ ด้วยวิธีอื่น</li>
+        <li><b>ระวัง</b>: ผู้ที่ได้ digoxin → ให้ช้ากว่าปกติ และ monitor ECG อย่างใกล้ชิด</li>
+      </ul>
+    </div>
+
+    <div class="ind w">
+      <span class="pill">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
+        แมกนีเซียมสูง / พิษจาก calcium channel blocker · IV
+      </span>
+      <ul>
+        <li><b>1–2 g</b> (10–20 mL) หยดใน 5–10 นาที ภายใต้ cardiac monitor</li>
+        <li>ออกฤทธิ์ปกป้องหัวใจเช่นเดียวกับ hyperkalemia</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="lbl">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg>
+      เฝ้าระวังหลังบริหาร
+    </p>
+    <div class="watch-grid">
+      <div class="wc r">
+        <p class="wt">⚠ แจ้งแพทย์ทันที / แนวทางแก้ไข</p>
+        <ul>
+          <li><b>ความดันต่ำ/หัวใจเต้นช้า</b> → หยุดหรือลดอัตรา infusion ทันที · แจ้งแพทย์</li>
+          <li><b>หัวใจเต้นผิดจังหวะ</b> → หยุดยา · on cardiac monitor · แจ้งแพทย์</li>
+          <li><b>ยารั่วออกนอกเส้น</b> (บวม แดง ร้อน ปวด) → หยุด infusion ทันที · แจ้งแพทย์ · พิจารณา hyaluronidase + cold compress</li>
+        </ul>
+      </div>
+      <div class="wc y">
+        <p class="wt">ติดตามต่อเนื่อง</p>
+        <ul>
+          <li>BP · HR · cardiac monitor ตลอดการให้ยา</li>
+          <li>ระดับ serum calcium ทุก 1–4 ชม. (infusion ต่อเนื่อง) หรือ 4–6 ชม. (ให้เป็นครั้ง)</li>
+          <li>สังเกตตำแหน่งเส้นทุก 15–30 นาที</li>
+          <li>ระวัง: หน้าแดง ร้อนวูบ คลื่นไส้ (อาจเกิดจากให้เร็วเกิน)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ci">
+      <p class="ci-t">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        ห้ามใช้ / ข้อควรระวังพิเศษ
+      </p>
+      <ul>
+        <li><b>ห้ามใช้ในผู้ป่วยแคลเซียมสูง (Hypercalcemia)</b> หรือแพ้ calcium gluconate</li>
+        <li><b>ผู้ป่วยที่ได้ digoxin</b> — เสี่ยงหัวใจเต้นผิดจังหวะรุนแรง ต้องให้ช้ามากและ monitor ECG ใกล้ชิด</li>
+        <li>ควรให้ทาง <b>central line</b> เสมอถ้าทำได้ — peripheral line เสี่ยง extravasation สูง</li>
+        <li>ผู้ป่วยไตวาย — ระวัง hypercalcemia ติดตาม serum calcium ใกล้ชิด</li>
+        <li>Sarcoidosis — เสี่ยง hypercalcemia มากขึ้น</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dc">
+    <p class="dc-t">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L12 8M13 15l3 3 5-9"/></svg>
+      Double-check ก่อนให้
+    </p>
+    <p>ตรวจซ้ำ 2 คน: <b>ขนาด + อัตรา + สารละลายที่ใช้เจือจาง + ยาอื่นที่ให้ร่วม (ceftriaxone? digoxin?) + เส้นให้ยา (central หรือ peripheral?)</b> · ตรวจสอบตำแหน่งเส้นก่อนให้ · เปิด cardiac monitor พร้อม</p>
+  </div>
+
+  <div class="foot">
+    <p>
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>ค่าอ้างอิงทั่วไป ต้องยืนยันกับแนวทาง/formulary ของโรงพยาบาล และผ่านการตรวจสอบโดยเภสัชกรก่อนใช้จริง</span>
+    </p>
+    <span class="ref">อ้างอิง: FDA package insert (Calcium Gluconate Injection) · StatPearls (NCBI) · 2020 AHA guidelines · ISMP high-alert medications</span>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
