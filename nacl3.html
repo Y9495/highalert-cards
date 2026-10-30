@@ -176,7 +176,7 @@
       </svg>
       <div>
         <p class="sv">3% NaCl · 500 mL/bag</p>
-        <p class="sd">Na⁺ 513 mEq/L · ~1,026 mOsm/L · Hypertonic · ใสไม่มีสี · ให้ undiluted ได้เลย ไม่ต้องผสม</p>
+        <p class="sd">Na⁺ 513 mEq/L (= 0.513 mEq/mL) · <b>1 ถุง 500 mL = Na⁺ ~257 mEq</b> · ~1,026 mOsm/L · Hypertonic · ใสไม่มีสี · ให้ undiluted ได้เลย ไม่ต้องผสม</p>
       </div>
     </div>
 
@@ -211,23 +211,23 @@
     <div class="limit-box">
       <p class="limit-t">
         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
-        <b>เป้าหมาย</b>เพิ่ม Na⁺ ต่อช่วงเวลา (ห้ามเกิน)
+        <b>เป้าหมาย</b> และ <b>เพดาน</b> การเพิ่ม Na⁺ ต่อช่วงเวลา
       </p>
       <div class="limit-grid">
         <div class="lm">
           <p class="lv">5 mEq/L</p>
-          <p class="lb">ใน 1 ชม. แรก<br>(อาการรุนแรง)</p>
+          <p class="lb"><b>เป้าหมาย</b> ใน 1 ชม.แรก<br>(อาการรุนแรง)</p>
         </div>
         <div class="lm">
-          <p class="lv">8–10 mEq/L</p>
-          <p class="lb">ใน 24 ชม. แรก<br>(ปกติ)</p>
+          <p class="lv">10 mEq/L</p>
+          <p class="lb"><b>เพดาน</b> 24 ชม.แรก<br>(ห้ามเกิน)</p>
         </div>
         <div class="lm">
           <p class="lv">18 mEq/L</p>
-          <p class="lb">ใน 48 ชม.<br>(สะสม)</p>
+          <p class="lb"><b>เพดาน</b> สะสม 48 ชม.<br>(ห้ามเกิน)</p>
         </div>
       </div>
-      <p style="font-size:11.5px;color:var(--pr-ink);margin:7px 0 0;">กลุ่มเสี่ยง ODS สูง (ตับแข็ง ติดแอลกอฮอล์ K⁺ต่ำ): <b>ไม่เกิน 6–8 mEq/L ใน 24 ชม.</b></p>
+      <p style="font-size:11.5px;color:var(--pr-ink);margin:7px 0 0;line-height:1.6;">กลุ่มเสี่ยง ODS สูง (ตับแข็ง ติดแอลกอฮอล์ ขาดสารอาหาร K⁺ต่ำ): <b>ไม่เกิน 8 mEq/L ใน 24 ชม.แรก</b> · หากประเมินว่าเสี่ยงมาก พิจารณาจำกัดที่ 6 mEq/L<br>หลัง 24 ชม.แรก: <b>ไม่เกิน 8 mEq/L ต่อทุก 24 ชม.</b> จนกระทั่ง Na⁺ ถึง 130 mEq/L</p>
     </div>
   </div>
 
@@ -258,9 +258,30 @@
       <ul>
         <li>อัตราเริ่มต้น: <b>0.5–1 mL/kg/hr</b> ปรับตาม serum Na⁺ ทุก 2–4 ชม.</li>
         <li>ตัวอย่าง 60 kg: เริ่ม 30–60 mL/hr</li>
-        <li><b>เป้าหมาย</b>: เพิ่ม Na⁺ <b>0.5–1 mEq/L/ชม.</b> ไม่เกิน 8–10 mEq/L ใน 24 ชม.</li>
+        <li><b>เป้าหมาย</b>: เพิ่ม Na⁺ <b>0.5–1 mEq/L/ชม.</b> · เพดาน <b>ไม่เกิน 10 mEq/L ใน 24 ชม.แรก</b></li>
         <li>เมื่อ Na⁺ ≥ 125 mEq/L หรืออาการดีขึ้น → ลดอัตราหรือเปลี่ยนเป็น NSS</li>
       </ul>
+    </div>
+
+    <!-- สูตรคำนวณ -->
+    <div style="margin-top:10px;background:var(--ac-bg);border:1px solid var(--ac-line);border-radius:10px;padding:10px 12px;">
+      <p style="font-size:11px;font-weight:600;color:var(--ac-ink);margin:0 0 6px;display:flex;align-items:center;gap:5px;">
+        <svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--ac-ink)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3M8 15h3M15 11v4M13 13h4"/></svg>
+        สูตรคำนวณอัตราหยด
+      </p>
+      <p style="font-size:12.5px;color:var(--ac-ink);margin:0 0 4px;line-height:1.7;">
+        <b>อัตราหยด (mL/hr) = น้ำหนัก (kg) × ขนาดที่สั่ง (mL/kg/hr)</b><br>
+        <b>Na⁺ ที่ได้ (mEq/hr) = อัตราหยด (mL/hr) × 0.513</b>
+      </p>
+      <p style="font-size:12px;color:var(--ink2);margin:6px 0 0;line-height:1.7;">
+        <b>ตัวอย่าง</b> ผู้ป่วย 60 kg · แพทย์สั่ง 1 mL/kg/hr<br>
+        ① 60 × 1 = <b>60 mL/hr</b> (ตั้งบนปั๊ม)<br>
+        ② 60 × 0.513 = 30.8 ≈ <b>31 mEq/hr</b><br>
+        <span style="color:var(--sc-ink);">ทวนย้อนกลับ: 60 ÷ 60 = 1 mL/kg/hr ✓ · 30.8 ÷ 0.513 = 60 mL/hr ✓</span>
+      </p>
+      <p style="font-size:11px;color:var(--dg-ink);margin:6px 0 0;line-height:1.6;">
+        ตัวเลขนี้คือปริมาณ Na⁺ ที่ <u>ให้เข้าไป</u> ไม่ใช่ค่า Na⁺ ในเลือดที่จะเพิ่มขึ้น · ต้องเจาะ serum Na⁺ ซ้ำทุก 2–4 ชม. เสมอ
+      </p>
     </div>
 
     <!-- ตารางอัตราหยด -->
@@ -268,7 +289,7 @@
       <thead>
         <tr>
           <th>อัตราหยด</th>
-          <th>Na⁺ ที่ได้ต่อชม.</th>
+          <th>Na⁺ ที่ได้รับ</th>
           <th>เหมาะสำหรับ</th>
         </tr>
       </thead>
@@ -290,7 +311,7 @@
         </tr>
         <tr>
           <td><b>150 mL/20 นาที</b></td>
-          <td style="color:var(--dg-ink);font-weight:600;">~385 mEq/hr</td>
+          <td style="color:var(--dg-ink);font-weight:600;">~77 mEq ใน 20 นาที<br><span style="font-weight:400;font-size:11px;">(เทียบเท่า ~231 mEq/hr)</span></td>
           <td style="color:var(--dg-ink);">Bolus อาการรุนแรง (แล้วลดทันที)</td>
         </tr>
       </tbody>
@@ -311,6 +332,7 @@
           <li><b>Phlebitis</b> (บวม แดง ร้อน) → หยุด · เปลี่ยนตำแหน่ง · พิจารณา central line</li>
           <li><b>ปัสสาวะมากผิดปกติ</b> (&gt;100 mL/hr กะทันหัน) → อาจเป็นสัญญาณแก้เร็วเกิน · ตรวจ Na⁺ ทันที</li>
           <li><b>ชัก สับสน อ่อนแรงเพิ่มขึ้น</b> → อาจเป็น ODS · หยุดยา · แจ้งแพทย์ทันที</li>
+          <li><b>ยาต้านพิษ/แก้ไข</b>: D5W · DDAVP (desmopressin) — <b>ตำแหน่งจัดเก็บ: <span style="background:#fff3dc;padding:0 4px;border-radius:3px;">⬚ รอระบุ</span></b></li>
         </ul>
       </div>
       <div class="wc y">
@@ -358,7 +380,7 @@
     <p style="margin:0 0 6px;font-size:11.5px;line-height:1.6;color:var(--ink2);text-align:center;">
       กลุ่มงานเภสัชกรรมและคุ้มครองผู้บริโภค<br>โรงพยาบาลวิภาวดี
     </p>
-    <span class="ref">อ้างอิง: European Clinical Practice Guidelines (Hyponatremia 2014) · ISMP</span>
+    <span class="ref">อ้างอิง: เอกสารกำกับยาของผลิตภัณฑ์ที่ใช้ในโรงพยาบาล · Clinical Practice Guideline on Diagnosis and Treatment of Hyponatraemia (ESE/ERBP/ESICM 2014) · US Expert Panel Recommendations (Verbalis et al. 2013) · Micromedex / UpToDate · ISMP<br>ทบทวนโดยกลุ่มงานเภสัชกรรมและคุ้มครองผู้บริโภค · เสนอ PTC รับรอง</span>
   </div>
 
 </div>
